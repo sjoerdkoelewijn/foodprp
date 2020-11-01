@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAuDI,0BAAiD;ECrDrD,SAAU;IAGF,SAAS,EAAC,eAAe;;AAKjC,eAAgB;EACZ,OAAO,EAAC,GAAG;EACX,MAAM,EAAC,+BAA2B;EAClC,gBAAgB,EAAC,OAAO",
-"sources": ["variables/breakpoints.scss","admin.scss"],
-"names": [],
-"file": "admin.css"
-}
