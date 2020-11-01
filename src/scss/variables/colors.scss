@@ -1,0 +1,121 @@
+@import "./breakpoints";
+
+$dark:#1A4178;
+$light:#F6F6F6;
+$white:#ffffff;
+
+$color:#69E8A3;
+$bgcolor:#EAF3F3;
+$actioncolor:#FF6A16;
+
+$box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+$text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+
+::selection {
+  color: $white;
+  background: $color;
+}
+
+html {
+  color:$dark;
+  background:$light;
+}
+
+a {
+  color:$dark;
+  //transition: color .5s ease;
+
+  &:hover {
+    //transition: color .5s ease;
+    color:$color;
+  }
+
+  &:visited {
+    color:$dark;
+  }
+
+  &:visited:hover {
+    color:$color;
+  }
+
+}
+
+.hero-image {
+
+  .menu-item {
+   
+    a {
+      color:$white;
+    }
+
+    .sub-menu {
+            
+      .menu-item a {
+        color:$dark;
+      }
+
+    }  
+
+  }
+
+}
+
+h1, h2, h3, h4 {
+  strong {
+    color:$color;
+  }
+}
+
+button, .button, .wp-block-button__link {
+  background:$color;
+  color:$dark;
+  transition: background-color .5s ease, color .5s ease;
+  
+  &:hover {
+    transition: background-color .5s ease, color .5s ease;
+    background:$dark;
+    color:$white;
+  }
+
+  &:visited{
+    color:$dark;
+  }
+
+  &:visited:hover {
+    color:$white;
+  }
+
+}
+
+
+.wp-block-button.is-style-outline {
+  .wp-block-button__link {
+    background:none;
+    border:2px solid $dark;
+    color:$dark;
+    transition: background-color .5s ease, color .5s ease;
+
+    &:hover {
+      transition: background-color .5s ease, color .5s ease;
+      background:$dark;
+      color:$white;
+    }
+
+  }
+}
+
+
+.wp-block-button.orange {
+  .wp-block-button__link {
+    background:$actioncolor;
+    color:$white;
+    transition: background-color .5s ease, color .5s ease;
+
+    &:hover {
+      transition: background-color .5s ease, color .5s ease;
+      background:$dark;
+      color:$white;
+    }
+
+  }
+}

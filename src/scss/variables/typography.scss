@@ -1,0 +1,86 @@
+@import "../variables/colors";
+@import "../variables/breakpoints";
+
+$body-font:'Poppins', sans-serif;
+$header-font:'Poppins', sans-serif;
+
+:root {
+
+    --large-title:2.5vw;
+    --medium-title:2vw;
+    --small-title:1.5vw;
+
+    --large-subtitle:1.50vw;
+    --medium-subtitle:1.25vw;
+    --small-subtitle:1.1vw;
+
+    --large-p:1.2rem;
+    --normal-p:1rem;
+    --small-p:.8rem;
+
+}
+
+html {
+    font-family: $body-font; 
+}
+
+input, textarea, input::placeholder, textarea::placeholder {
+    font-family: $body-font; 
+    font-weight:300;
+}
+
+button {
+    font-family: $body-font; 
+}
+
+strong {
+    font-weight:700;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:$header-font;
+    font-weight:800;
+    text-transform:uppercase;
+
+
+}
+
+h1 {
+    font-weight:800;
+    line-height:140%;
+    font-size:var(--large-title);    
+    margin-bottom:30px;
+}
+
+h2 {
+    font-weight:800;
+    line-height:150%;
+    font-size:var(--large-subtitle);
+    margin-bottom:30px;
+}
+
+h1 + h2 {
+   margin-top:-15px; // Adjacent sibling selector - Move h2 up when it follows a h1
+}
+
+h3, h4 {
+    font-weight:800;
+    line-height:150%;
+    font-size:var(--medium-subtitle);
+    margin-bottom:20px;
+}
+
+
+p{
+    line-height:180%; 
+    font-weight:300;
+    font-size:var(--normal-p);
+    margin-bottom:30px;      
+  
+}
+
+button, .button, .wp-block-button__link {
+    font-weight:600;
+    font-size: var(--small-p);
+}
+

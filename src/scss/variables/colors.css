@@ -1,0 +1,58 @@
+::selection {
+  color: #ffffff;
+  background: #69E8A3; }
+
+html {
+  color: #1A4178;
+  background: #F6F6F6; }
+
+a {
+  color: #1A4178; }
+  a:hover {
+    color: #69E8A3; }
+  a:visited {
+    color: #1A4178; }
+  a:visited:hover {
+    color: #69E8A3; }
+
+.hero-image .menu-item a {
+  color: #ffffff; }
+.hero-image .menu-item .sub-menu .menu-item a {
+  color: #1A4178; }
+
+h1 strong, h2 strong, h3 strong, h4 strong {
+  color: #69E8A3; }
+
+button, .button, .wp-block-button__link {
+  background: #69E8A3;
+  color: #1A4178;
+  transition: background-color .5s ease, color .5s ease; }
+  button:hover, .button:hover, .wp-block-button__link:hover {
+    transition: background-color .5s ease, color .5s ease;
+    background: #1A4178;
+    color: #ffffff; }
+  button:visited, .button:visited, .wp-block-button__link:visited {
+    color: #1A4178; }
+  button:visited:hover, .button:visited:hover, .wp-block-button__link:visited:hover {
+    color: #ffffff; }
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background: none;
+  border: 2px solid #1A4178;
+  color: #1A4178;
+  transition: background-color .5s ease, color .5s ease; }
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    transition: background-color .5s ease, color .5s ease;
+    background: #1A4178;
+    color: #ffffff; }
+
+.wp-block-button.orange .wp-block-button__link {
+  background: #FF6A16;
+  color: #ffffff;
+  transition: background-color .5s ease, color .5s ease; }
+  .wp-block-button.orange .wp-block-button__link:hover {
+    transition: background-color .5s ease, color .5s ease;
+    background: #1A4178;
+    color: #ffffff; }
+
+/*# sourceMappingURL=colors.css.map */
