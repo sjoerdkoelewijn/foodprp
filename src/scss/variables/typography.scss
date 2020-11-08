@@ -1,22 +1,22 @@
 @import "../variables/colors";
 @import "../variables/breakpoints";
 
-$body-font:'Poppins', sans-serif;
-$header-font:'Poppins', sans-serif;
+$body-font:'Nunito', sans-serif;
+$header-font:'Nunito', sans-serif;
 
 :root {
 
-    --large-title:2.5vw;
-    --medium-title:2vw;
-    --small-title:1.5vw;
+    --large-title:clamp(2.9rem, 2.5vw, 5rem);
+    --medium-title:clamp(1.6rem, 2vw, 4rem);
+    --small-title:clamp(1.4rem, 1.5vw, 3rem);
 
-    --large-subtitle:1.50vw;
-    --medium-subtitle:1.25vw;
-    --small-subtitle:1.1vw;
+    --large-subtitle:clamp(1.4rem, 1.50vw, 2.6rem);
+    --medium-subtitle:clamp(1.2rem, 1.25vw, 2.4rem);
+    --small-subtitle:clamp(1.1rem, 1.1vw, 2.2rem);
 
-    --large-p:1.2rem;
-    --normal-p:1rem;
-    --small-p:.8rem;
+    --large-p:1.4rem;
+    --normal-p:1.2rem;
+    --small-p:1rem;
 
 }
 
@@ -42,21 +42,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight:800;
     text-transform:uppercase;
 
-
 }
 
 h1 {
-    font-weight:800;
-    line-height:140%;
+    font-weight:300;
+    line-height:110%;
     font-size:var(--large-title);    
     margin-bottom:30px;
 }
 
 h2 {
-    font-weight:800;
-    line-height:150%;
+    font-weight:900;
+    line-height:160%;
     font-size:var(--large-subtitle);
-    margin-bottom:30px;
+    margin-bottom:15px;
 }
 
 h1 + h2 {
@@ -67,15 +66,15 @@ h3, h4 {
     font-weight:800;
     line-height:150%;
     font-size:var(--medium-subtitle);
-    margin-bottom:20px;
+    margin-bottom:15px;
 }
 
 
 p{
-    line-height:180%; 
+    line-height:160%; 
     font-weight:300;
     font-size:var(--normal-p);
-    margin-bottom:30px;      
+    margin:0 0 20px 0;      
   
 }
 
