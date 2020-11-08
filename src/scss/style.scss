@@ -28,15 +28,31 @@ body {
 
 /* ------------- Recipes overview ----------------------------------------------------------------------------------------------------------- */
 
+.wp-block-group {
+    width:clamp(300px, 60%, 1000px);
+}
+
 .recipes {
-    margin-left:calc( clamp(20px, 8vw, 200px) * -1 );
-    padding:clamp(10px, 8vh, 100px) clamp(20px, 8vw, 200px); 
-    width:100vw;
+    padding:clamp(10px, 8vh, 100px) clamp(20px, 5vw, 200px); 
+    
     background:$medium;
+    border-radius:5px;
+    display:flex;
+
+    @include phone {
+        margin-left:calc( clamp(20px, 8vw, 200px) * -1 );
+        width:100vw;
+        border-radius:0;
+    }
 
     .recipe {
         background:$white;
         border-radius:5px;
+        width:25%;
+
+        @include phone {
+            width:100%;
+        }
 
         a {
             text-decoration:none;
@@ -50,7 +66,9 @@ body {
         }
 
         .text {
-            padding:clamp(10px, 3vh, 50px) clamp(20px, 3vw, 50px);
+            padding:clamp(10px, 3vh, 50px) clamp(20px, 2vw, 50px);
+
+            
 
             h1 {
                 font-weight:900;
@@ -75,6 +93,8 @@ body {
 
 .hero {
     display:flex;
+    align-items: center;  // vertical center
+    justify-content: center; // horizontal center
 
     @include phone {
         flex-direction: column;
@@ -89,21 +109,41 @@ body {
 
         img {
             width:100%;
-            height:100%;
+            height:60vh;
+
+            @include phone {
+                height:100%;
+            }
         }
     }
 
     .text {
-        padding:30px 10px;
+        padding:30px clamp(10px, 10vw, 100px);
         text-align:center;
 
+        @include phone {
+            padding:30px 0;
+        }
+
         h1 {            
-            font-weight:900;
-            text-align: center;
-            line-height: 150%;
-            font-size:var(--small-title);
+            
             margin-bottom:15px;
         }
+    }
+
+}
+
+.content {
+
+    margin-top:clamp(10px, 6vh, 100px);
+    
+    .wp-block-columns {
+        background:$medium;
+
+        .wp-block-column {
+            padding:clamp(10px, 5vw, 100px);
+        }
+        
     }
 
 }
