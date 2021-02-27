@@ -189,12 +189,15 @@ header {
 /* ------------- Recipe List -------------- */
 
 .recipes {
-    padding:clamp(20px, 5vh, 100px) clamp(20px, 5vw, 200px);
-
+    //padding:clamp(20px, 5vh, 100px) clamp(20px, 5vw, 200px);
+    padding:30px 20px 30px 20px;
+    display:flex;
+    flex-wrap: wrap;
 
     .recipe {
         display:flex;
         margin:20px 0 20px 0;
+        max-width:360px;
 
         .image {
             width:35%;
