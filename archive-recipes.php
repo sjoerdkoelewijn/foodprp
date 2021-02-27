@@ -8,13 +8,11 @@
 		
 		</nav>
 
-		<!-- TO DO - Add course categories
-			<nav class="categories text">
+		<nav class="categories text">
 		
 			<?php sk_get_custom_taxonomy('courses', 'text'); ?>
 	
 		</nav>
-		-->
 
 		<section data-recipe-container class="recipes list"> 
 

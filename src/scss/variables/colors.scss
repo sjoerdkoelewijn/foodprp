@@ -1,14 +1,16 @@
 @import "./breakpoints";
 
-$dark:#242424;
-$light:#F9FBFA;
-$medium:#EDEDED;
+$dark:#828282;
+
+$medium:#dbdbdb;
+$light:#EDEDED;
+$background:#F9FBFA;
 $white:#ffffff;
 
 $color:#FF6A16;
-$actioncolor:#FF6A16;
+$colorgradient:linear-gradient(211.75deg, rgba(245, 40, 114, 0.3) 6.15%, rgba(255, 119, 73, 0) 100%), #FF7749;
 
-$box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.05);
+$box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.16);
 $text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
 ::selection {
@@ -18,7 +20,7 @@ $text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
 
 html {
   color:$dark;
-  background:$light;
+  background:$background;
 }
 
 a {
@@ -85,37 +87,4 @@ button, .button, .wp-block-button__link {
     color:$white;
   }
 
-}
-
-
-.wp-block-button.is-style-outline {
-  .wp-block-button__link {
-    background:none;
-    border:2px solid $dark;
-    color:$dark;
-    transition: background-color .5s ease, color .5s ease;
-
-    &:hover {
-      transition: background-color .5s ease, color .5s ease;
-      background:$dark;
-      color:$white;
-    }
-
-  }
-}
-
-
-.wp-block-button.orange {
-  .wp-block-button__link {
-    background:$actioncolor;
-    color:$white;
-    transition: background-color .5s ease, color .5s ease;
-
-    &:hover {
-      transition: background-color .5s ease, color .5s ease;
-      background:$dark;
-      color:$white;
-    }
-
-  }
 }

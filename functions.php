@@ -3,9 +3,8 @@
 include 'functions/custom-post-types.php';
 include 'functions/enqueue.php';
 include 'functions/menus.php';
-include 'functions/acf.php';
 
-if(strpos($_SERVER['HTTP_HOST'], 'roxtar.local') !== false){
+if(strpos($_SERVER['HTTP_HOST'], 'foodprp.local') !== false){
 	
 	function favicon() {
 		echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_template_directory_uri().'/images/localfavicon.ico" />';
@@ -13,8 +12,6 @@ if(strpos($_SERVER['HTTP_HOST'], 'roxtar.local') !== false){
 	add_action('wp_head', 'favicon');
 
 } else {
-
-    include 'functions/acf.php';
 
 	function favicon() {
 		echo '<link rel="Shortcut Icon" type="image/x-icon" href="'. get_template_directory_uri() . '/images/favicon.ico" />';
@@ -109,11 +106,10 @@ add_action('init', function () {
 
 /*************************** Register Custom Thumbnail sizes *********************************/
 
-	add_image_size( 'largest_image', 3840, 2560, false );
 	add_image_size( 'larger_image', 1920, 1280, false );  
-	add_image_size( 'large_image', 1620, 1080, false ); 
-	add_image_size( 'medium_image', 960, 638, false ); 
-    add_image_size( 'small_image', 300, 300, true ); // (cropped)
+	add_image_size( 'large_image', 1024, 768, false ); 
+	add_image_size( 'medium_image', 800, 600, false ); 
+    add_image_size( 'small_image', 300, 300, false );
 
 
 /*************************** Custom Editor colors *********************************/
@@ -126,7 +122,6 @@ add_theme_support('disable-custom-gradients', true);
 
 /*************************** Options Page *********************************/
 
-
 if( function_exists('acf_add_options_page') ) {
 	
     acf_add_options_page(array(
@@ -138,3 +133,67 @@ if( function_exists('acf_add_options_page') ) {
 	));
 	
 }
+
+/*************************** Get custom taxonomy function *********************************/
+
+function sk_get_custom_taxonomy( $taxonomy_name, $template ) {
+
+    // Get the taxonomy's terms
+    $terms = get_terms(
+        array(
+            'taxonomy'   => $taxonomy_name,
+            'hide_empty' => false,
+        )
+    );
+
+    // Check if any term exists
+    if ( ! empty( $terms ) && is_array( $terms ) ) {
+
+        foreach ( $terms as $term ) { 
+
+            if ($template = 'full') { 
+               
+                $featured_image = get_field('featured_image', $term); 
+                $sub_header = get_field('sub_header', $term); 
+                
+                ?>         
+
+                <a 
+                    <?php if( $featured_image ): ?> 
+                    style="background-image:url('<?php echo $featured_image['url']; ?>');" 
+                    <?php endif; ?> 
+                    class="category full" 
+                    href="<?php echo esc_url( get_term_link( $term ) ) ?>"
+                > 
+
+                    <h1>
+                        <?php echo $term->name; ?>
+                    </h1>
+
+                    <?php if( $featured_image ): ?>
+
+                        <h2>
+                            <?php echo $sub_header; ?>
+                        </h2>
+
+                    <?php endif; ?>
+
+                </a>
+
+            <?php } else { ?>
+
+                <a class="category text" href="<?php echo esc_url( get_term_link( $term ) ) ?>">
+                    <?php echo $term->name; ?>
+                </a>
+                
+            <?php }
+
+            
+        }
+    } 
+
+}
+
+add_action( 'init', function() {
+    remove_post_type_support( 'recipes', 'editor');
+}, 99);

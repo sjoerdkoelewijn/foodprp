@@ -5,145 +5,316 @@
 
 /* ------------- Header ----------------------------------------------------------------------------------------------------------- */
 
-body {
-    padding:clamp(10px, 6vh, 100px) clamp(20px, 8vw, 200px);
-}
+header {
+    background:$colorgradient;
+    width:100vw;
+    padding-top:30px;
+    height:200px;
 
-.bg_image {
-    position:absolute;
-    right:0;
-    top:0;
-    object-fit:cover;
-    z-index:-1;
-    width:clamp(600px, 100vw, 3840px);    
-}
-
-.header {
-    padding:0 0 clamp(50px, 10vh, 100px) 0;
-
-    svg {
-        width:175px;
-    }
-}
-
-/* ------------- Recipes overview ----------------------------------------------------------------------------------------------------------- */
-
-.wp-block-group {
-    width:clamp(300px, 60%, 1000px);
-}
-
-.recipes {
-    padding:clamp(10px, 8vh, 100px) clamp(20px, 5vw, 200px); 
-    
-    background:$medium;
-    border-radius:5px;
-    display:flex;
-
-    @include phone {
-        margin-left:calc( clamp(20px, 8vw, 200px) * -1 );
-        width:100vw;
-        border-radius:0;
-    }
-
-    .recipe {
-        background:$white;
-        border-radius:5px;
-        width:25%;
-
-        @include phone {
-            width:100%;
-        }
-
-        a {
-            text-decoration:none;
-        }
-
-        .image {
-            img {
-                width:100%;
-                border-radius:5px 5px 0 0;
-            }
-        }
-
-        .text {
-            padding:clamp(10px, 3vh, 50px) clamp(20px, 2vw, 50px);
-
-            
-
-            h1 {
-                font-weight:900;
-                text-align: center;
-                line-height: 150%;
-                font-size:var(--small-title);
-                margin-bottom:15px;
-            }
-
-            p {
-                text-align: center;
-                font-size:var(--small-p);
-            }
-
-        }
-
-    }
-
-}
-
-/* ------------- Recipe single ----------------------------------------------------------------------------------------------------------- */
-
-.hero {
-    display:flex;
-    align-items: center;  // vertical center
-    justify-content: center; // horizontal center
-
-    @include phone {
-        flex-direction: column;
-    }
-
-    .image, .text {
-        width:100%;
-
-    }
-
-    .image {
-
+    .logo {
+        
         img {
-            width:100%;
-            height:60vh;
+            filter:brightness(0) saturate(100%) invert(100%);  
+            margin:0 auto;
+            display:block;
+            width:150px;
 
-            @include phone {
-                height:100%;
-            }
         }
     }
-
-    .text {
-        padding:30px clamp(10px, 10vw, 100px);
-        text-align:center;
-
-        @include phone {
-            padding:30px 0;
-        }
-
-        h1 {            
-            
-            margin-bottom:15px;
-        }
-    }
-
 }
 
-.content {
+.main {
+    // padding:clamp(10px, 5vh, 100px) clamp(10px, 5vw, 200px);
+}
 
-    margin-top:clamp(10px, 6vh, 100px);
+/* ------------- Category Overview ----------------------------------------------------------------------------------------------------------- */
+
+
+/* ------------- Category Boxes -------------- */
+
+.categories.full {
+    margin-top:-100px;
+
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 0 20px;
+
+    overflow-y: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding:0 20px 30px 20px;
+
+    &:after {
+        content:'';
+        width:20px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $light;
+        border-radius:5px;
+        margin:0 20px;        
+    }
+
     
-    .wp-block-columns {
-        background:$medium;
-
-        .wp-block-column {
-            padding:clamp(10px, 5vw, 100px);
-        }
+    &::-webkit-scrollbar {
+        height: 4px;
+        background-color: $light;
         
     }
 
+    &::-webkit-scrollbar-thumb {
+        background-color: $medium;
+        border-radius:5px;
+    }
+
+
+    .category {
+        min-height:350px;
+        min-width:clamp(280px, 70vw, 400px);
+        display:block;
+        background-color:$colorgradient;
+        border-radius: 20px;
+        background-size: cover;
+        box-shadow: $box-shadow;
+        padding:30px;
+        position:relative;
+
+        scroll-snap-stop: always;
+        scroll-snap-align: center;
+
+        &:before {
+            content:'';
+            background:linear-gradient(172.72deg, rgba(0, 0, 0, 0.4) 4.64%, rgba(0, 0, 0, 0) 56.35%);
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            position:absolute;
+            z-index:1;
+            border-radius:20px;
+        }
+
+        &:after {
+            content:'';
+            background:$white url('../../images/svg/ArrowRight.svg') no-repeat;
+            background-position:14px 14px;
+            border-radius: 100%;
+            width:40px;
+            height:40px;
+            z-index:2;
+            display:block;
+            position:absolute;
+            bottom:30px;
+            left:30px;
+        }
+
+        &:hover:after {
+            background-color:$colorgradient;
+        }
+  
+        h1, h2 {
+            color:$white;
+            z-index:2;
+            position:relative;
+        }
+
+    }
+
 }
+
+/* ------------- Category Buttons -------------- */
+
+.categories.text {
+    margin-top:50px;
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 0 60px;
+
+    overflow-y: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding:0 60px 30px 60px;
+
+    &:after {
+        content:'';
+        width:30px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $background;
+        border-radius:5px;
+        margin:0 20px;        
+    }
+
+    
+    &::-webkit-scrollbar {
+        height: 4px;
+        background-color: $background;
+        
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $background;
+        border-radius:5px;
+    }
+
+
+    .category {
+        display:block;
+        background-color:$background;
+        border-radius: 20px;
+
+        scroll-snap-stop: always;
+        scroll-snap-align: center; 
+
+        h1 {
+            font-size:var(--body);
+        }
+
+    }
+
+} 
+
+
+/* ------------- Recipe List -------------- */
+
+.recipes {
+    padding:clamp(20px, 5vh, 100px) clamp(20px, 5vw, 200px);
+
+
+    .recipe {
+        display:flex;
+        margin:20px 0 20px 0;
+
+        .image {
+            width:35%;
+            min-height:120px;
+            margin-right:5%;
+            
+
+            img {
+                width:100%;
+                height:100%;
+                border-radius:5px;                
+            }
+            
+        }
+
+        .content {
+            width:60%;
+            padding:5px 0;
+            display:flex;
+            flex-direction: column;
+            justify-content:space-between;
+
+            a {
+                text-decoration:none;
+                color:$color;
+            }
+
+            h2 {
+                font-weight:600;
+                line-height:120%;
+                margin:0;
+            }
+
+            .add_prplist {
+                background:$background;
+                margin-top:20px;
+                text-align:left;
+                font-size:var(--body-s);
+                line-height:20px;
+                color:$dark;
+
+                .added {
+                    display:none;
+                }
+
+                &:before {
+                    content:'';
+                    width:16px;
+                    height:16px;
+                    margin-right:3px;
+                    display:inline-block;
+                    background:url('../../images/svg/bookmark.svg') no-repeat;
+     
+                }
+            }
+
+            .add_prplist.checked {
+                color:$color;
+
+                .added {
+                    display:inline;
+                }
+
+                .add {
+                    display:none;
+                }
+
+                &:before {
+                    background-image:url('../../images/svg/bookmark-checked.svg');
+                }
+            }
+        }
+
+    }
+
+}
+
+
+/* ------------- Single Recipe Pages ----------------------------------------------------------------------------------------------------------- */
+
+.single-recipes {
+
+    .hero {
+        margin:-100px clamp(20px, 5vw, 200px) 0 clamp(20px, 5vw, 200px);
+        min-height:350px;
+        min-width:clamp(280px, 70vw, 400px);
+        display:block;
+        background-color:$colorgradient;
+        border-radius: 20px;
+        background-size: cover;
+        box-shadow: $box-shadow;
+        padding:30px;
+        position:relative;
+
+        &:before {
+            content:'';
+            background:linear-gradient(172.72deg, rgba(0, 0, 0, 0.4) 4.64%, rgba(0, 0, 0, 0) 56.35%);
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            position:absolute;
+            z-index:1;
+            border-radius:20px;
+        }
+
+        .text {
+            color:$white;
+            text-shadow: $text-shadow;
+            font-weight:600; 
+            z-index:2;
+            position:relative;
+            font-size:var(--body);
+
+            h1 {
+                margin-bottom:5px;
+            }
+    
+        }            
+        
+    }
+
+}  
