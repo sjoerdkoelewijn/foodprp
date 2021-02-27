@@ -321,3 +321,21 @@ header {
     }
 
 }  
+
+
+
+.footer_logo {
+    background:$colorgradient;
+    width:100%;
+    display:block;
+    padding:5px;
+    margin-top:40px;
+
+    img {
+        filter:brightness(0) saturate(100%) invert(100%);  
+        margin:15px auto;
+        display:block;
+        width:100px;
+    }
+
+}
