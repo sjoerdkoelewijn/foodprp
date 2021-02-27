@@ -4,7 +4,7 @@
 
 		<nav class="categories full">
 		
-			<?php sk_get_custom_taxonomy('types', 'full'); ?>
+			<?php sk_get_custom_taxonomy('recipe_types', 'full'); ?>
 		
 		</nav>
 
