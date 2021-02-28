@@ -318,7 +318,7 @@ header {
     
 }
 
-/* -------------  Hero ----------------------------------------------------------------------------------------------------------- */
+/* -------------  Single Recipe ----------------------------------------------------------------------------------------------------------- */
 
 .single-recipes {
 
@@ -341,21 +341,42 @@ header {
     }
 }
 
+/* -------------  Shortlist ----------------------------------------------------------------------------------------------------------- */
 
 
+.page-template-page-shortlist {
 
-.footer_logo {
-    background:$colorgradient;
-    width:100%;
-    display:block;
-    padding:5px;
-    margin-top:40px;
-
-    img {
-        filter:brightness(0) saturate(100%) invert(100%);  
-        margin:15px auto;
-        display:block;
-        width:100px;
+    header {
+        height:100px;
     }
+    .recipes .recipe .content {
+        width:100%;
+    }
+
+    .recipes .recipe .image {
+        width:60px;
+        margin-right:20px;
+        min-height:60px;
+
+        img {
+            width: 60px;
+            height: 60px;
+        }
+    
+    }
+}    
+
+
+.footer_menu {
+    background:white;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    position:sticky;
+    bottom:0;
+    padding:20px;
+    box-shadow: -4px -4px 6px 1px rgba(0, 0, 0, 0.04);
+
+   
 
 }
