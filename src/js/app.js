@@ -61,7 +61,7 @@ likeBtn.forEach(function(elem) {
 
 const recipeContainer = document.querySelector('[data-shortlist-container]');
 
-fetch('http://foodprp.local/wp-json/wp/v2/recipes?_embed&per_page=10&order=asc')
+fetch('/wp-json/wp/v2/recipes?_embed&per_page=10&order=asc')
   .then((response) => {
     return response.json();
   })
