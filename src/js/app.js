@@ -91,7 +91,6 @@ fetch('/wp-json/wp/v2/recipes?_embed&per_page=10&order=asc')
 
                     </a>            
 
-                    ${recipe.acf.sub_header ? recipe.acf.sub_header : ''}
 
                   
                 </div>                                        
