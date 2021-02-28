@@ -57,20 +57,11 @@ likeBtn.forEach(function(elem) {
 
 
 
+// Fetch recipes on shortlist
 
+const recipeContainer = document.querySelector('[data-shortlist-container]');
 
-
-
-
-
-
-
-
-// Fetch recipes
-/*
-const recipeContainer = document.querySelector('[data-recipe-container]');
-
-fetch('http://foodprp.local/wp-json/wp/v2/recipes?_embed&per_page=100&order=asc')
+fetch('http://foodprp.local/wp-json/wp/v2/recipes?_embed&per_page=10&order=asc')
   .then((response) => {
     return response.json();
   })
@@ -78,8 +69,11 @@ fetch('http://foodprp.local/wp-json/wp/v2/recipes?_embed&per_page=100&order=asc'
   .then((recipeJson) => {
     let result = ``;
 
-    recipeJson.forEach((recipe) => {
-        result +=
+    const RecipeIDs = localStorage.getItem('RecipeIDs');
+    recipeJson.forEach((recipe) => { 
+        
+        if (RecipeIDs.includes(recipe.id)) {
+            result +=
             `
             <article class="recipe">
 
@@ -99,18 +93,15 @@ fetch('http://foodprp.local/wp-json/wp/v2/recipes?_embed&per_page=100&order=asc'
 
                     ${recipe.acf.sub_header ? recipe.acf.sub_header : ''}
 
-                    <button class="add_prplist">
-                        Add to prplist ${recipe.id}
-                    </button> 
-
+                  
                 </div>                                        
 
             </article>
             
             `;
+        } 
+       
         recipeContainer.innerHTML = result;
     })
 
   });
-
-  */

@@ -25,27 +25,22 @@
 
 				<div class="content">
 
-					<?php the_field('quantity'); ?>
-					<?php the_field('cook_time'); ?>
+					<article class="recipe_meta">
 
-					<?php
-					$required_recipes = get_field('required_recipes');
-					if( $required_recipes ): ?>
-						<ul>
-						<?php foreach( $required_recipes as $post ): 
+						<p>
+							<?php the_field('quantity'); ?> gr
+						</p>
+						<p>
+							<?php the_field('cook_time'); ?> mins
+						</p>
 
-							// Setup this post for WP functions (variable must be named $post).
-							setup_postdata($post); ?>
-							<li>
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>									
-							</li>
-						<?php endforeach; ?>
-						</ul>
-						<?php 
-						// Reset the global post object so that the rest of the page works correctly.
-						wp_reset_postdata(); ?>
-					<?php endif; ?>
+					</article>
 
+					<article class="recipe_ingredients">
+
+					<h2>
+						Ingredients
+					</h2>
 					<?php
 
 						if( have_rows('ingredients') ): ?>
@@ -68,8 +63,35 @@
 					?>
 
 					<?php
+					$required_recipes = get_field('required_recipes');
+					if( $required_recipes ): ?>
+						<ul>
+						<?php foreach( $required_recipes as $post ): 
 
-					if( have_rows('instructions') ): ?>
+							// Setup this post for WP functions (variable must be named $post).
+							setup_postdata($post); ?>
+							<li>
+								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>									
+							</li>
+						<?php endforeach; ?>
+						</ul>
+						<?php 
+						// Reset the global post object so that the rest of the page works correctly.
+						wp_reset_postdata(); ?>
+					<?php endif; ?>
+
+
+					</article>
+					
+
+
+					<article class="recipe_steps">
+
+					<h2>
+						Steps
+					</h2>
+
+					<?php if( have_rows('instructions') ): ?>
 						<ul>
 
 							<?php while ( have_rows('instructions') ) : the_row();?>
@@ -82,6 +104,10 @@
 						</ul>
 					<?php endif; 
 					?>
+
+					</article>
+					
+					
 				
 
 

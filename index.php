@@ -18,7 +18,22 @@
 
 		<section data-recipe-container class="recipes list"> 
 
-			<?php include('components/recipe-list.php'); ?>
+			<?php
+
+			$loop = new WP_Query(
+				array(
+					'post_type' => 'recipes',
+					'order' => 'asc'
+				)
+			);    
+
+			while ( $loop->have_posts() ) : $loop->the_post(); ?>   
+
+				<?php include('components/recipe-list.php'); ?>
+				
+			<?php endwhile;
+				wp_reset_postdata();
+			?>
 
 		</section>
 
