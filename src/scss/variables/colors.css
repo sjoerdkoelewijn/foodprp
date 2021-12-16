@@ -1,0 +1,44 @@
+:root {
+  --darkest: #292F36;
+  --dark: #A8A9A9;
+  --medium:#BDBDBD;
+  --lighter:#E1E1E1;
+  --lightest: #F1F1F1;
+  --background:#F8F8F8;
+  --white:#ffffff;
+  --primary-color:#FF6B6B;
+  --secondary-color:#48DD9F; }
+
+::selection {
+  color: var(--white);
+  background: var(--primary-color); }
+
+html {
+  color: var(--darkest);
+  background: var(--background); }
+
+a {
+  color: var(--darkest); }
+  a:hover {
+    color: var(--primary-color); }
+  a:visited {
+    color: var(--darkest); }
+  a:visited:hover {
+    color: var(--primary-color); }
+  a:focus {
+    color: var(--primary-color); }
+
+button, .button, .wp-block-button__link {
+  background-color: var(--primary-color);
+  color: var(--darkest);
+  transition: background-color .5s ease, color .5s ease; }
+  button:hover, .button:hover, .wp-block-button__link:hover {
+    transition: background-color .5s ease, color .5s ease;
+    background-color: var(--darkest);
+    color: var(--white); }
+  button:visited, .button:visited, .wp-block-button__link:visited {
+    color: var(--darkest); }
+  button:visited:hover, .button:visited:hover, .wp-block-button__link:visited:hover {
+    color: var(--white); }
+
+/*# sourceMappingURL=colors.css.map */

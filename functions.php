@@ -112,28 +112,6 @@ add_action('init', function () {
     add_image_size( 'small_image', 300, 300, false );
 
 
-/*************************** Custom Editor colors *********************************/
-
-add_theme_support( 'disable-custom-colors' );
-add_theme_support( 'editor-color-palette' );
-add_theme_support('editor-gradient-presets', []);
-add_theme_support('disable-custom-gradients', true);
-
-
-/*************************** Options Page *********************************/
-
-if( function_exists('acf_add_options_page') ) {
-	
-    acf_add_options_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-general-settings',
-		'capability'	=> 'edit_posts',
-		'redirect'		=> false
-	));
-	
-}
-
 /*************************** Get custom taxonomy function *********************************/
 
 function sk_get_custom_taxonomy( $taxonomy_name, $template ) {

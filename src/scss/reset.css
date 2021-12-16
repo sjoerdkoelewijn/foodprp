@@ -1,26 +1,20 @@
-// based on https://hankchizljaw.com/wrote/a-modern-css-reset/
-
 html {
-  overflow-x:hidden;
-  scroll-behavior: smooth;
-}
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
 
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-*,*:focus,*:hover{
-  outline:none;
-}
+*, *:focus, *:hover {
+  outline: none; }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-  padding: 0;
-}
+  padding: 0; }
 
 /* Remove default margin */
 body,
@@ -37,48 +31,39 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
-}
+  margin: 0; }
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
+  line-height: 1.5; }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  list-style: none;
-}
+  list-style: none; }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
+  text-decoration-skip-ink: auto; }
 
 /* Make images easier to work with */
 img {
   display: block;
-  object-fit: cover; 
-}
+  object-fit: cover; }
 
 /* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
-  font: inherit;
-}
+  font: inherit; }
 
 button {
-  border:0;
-  cursor: pointer;
-}
-
-
+  border: 0;
+  cursor: pointer; }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
@@ -86,6 +71,6 @@ button {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+    scroll-behavior: auto !important; } }
+
+/*# sourceMappingURL=reset.css.map */

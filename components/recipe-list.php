@@ -11,7 +11,16 @@
             </a>
 
         <?php } ?>
-    
+
+        <button class="add_prplist" data-like-btn data-recipe-id="<?php the_ID(); ?>" data-user-id="<?php echo get_current_user_id(); ?>">
+            <span class="add">
+                add to wishlist
+            </span>
+            <span class="added">
+                added to wishlist
+            </span>
+        </button>
+
         <div class="content">
         
             <a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
@@ -20,12 +29,7 @@
                 </h2>							
             </a>
 
-            <?php the_field('sub_header'); ?>
-
-            <button class="add_prplist" data-like-btn data-recipe-id="<?php the_ID(); ?>" data-user-id="<?php echo get_current_user_id(); ?>">
-                <span class="add">add to shortlist</span>
-                <span class="added">added to shortlist</span>
-            </button>                     
+            <?php the_field('sub_header'); ?>                                 
 
         </div>                                        
 

@@ -1,90 +1,75 @@
 @import "./breakpoints";
 
-$dark:#828282;
+:root {
+  --darkest: #292F36;
+  --dark: #A8A9A9;
+  --medium:#BDBDBD;
+  --lighter:#E1E1E1;
+  --lightest: #F1F1F1;
 
-$medium:#dbdbdb;
-$light:#EDEDED;
-$background:#F9FBFA;
-$white:#ffffff;
+  --background:#F8F8F8;
 
-$color:#FF6A16;
-$colorgradient:linear-gradient(211.75deg, rgba(245, 40, 114, 0.3) 6.15%, rgba(255, 119, 73, 0) 100%), #FF7749;
+  --white:#ffffff;
 
-$box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.16);
-$text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
-
-::selection {
-  color: $white;
-  background: $color;
+  --primary-color:#FF6B6B;
+  --secondary-color:#48DD9F;
 }
 
+
+
+
+
+::selection {
+  color: var(--white);
+  background: var(--primary-color); 
+}
+
+
 html {
-  color:$dark;
-  background:$background;
+  color:var(--darkest);
+  background:var(--background);
 }
 
 a {
-  color:$dark;
-  //transition: color .5s ease;
+  color:var(--darkest);
 
   &:hover {
-    //transition: color .5s ease;
-    color:$color;
+    color:var(--primary-color);
   }
 
   &:visited {
-    color:$dark;
+    color:var(--darkest);
   }
 
   &:visited:hover {
-    color:$color;
+    color:var(--primary-color);
+  }
+
+  &:focus {
+    color:var(--primary-color);
   }
 
 }
 
-.hero-image {
 
-  .menu-item {
-   
-    a {
-      color:$white;
-    }
-
-    .sub-menu {
-            
-      .menu-item a {
-        color:$dark;
-      }
-
-    }  
-
-  }
-
-}
-
-h1, h2, h3, h4 {
-  strong {
-    color:$color;
-  }
-}
 
 button, .button, .wp-block-button__link {
-  background:$color;
-  color:$dark;
+  background-color:var(--primary-color);
+  color:var(--darkest);
   transition: background-color .5s ease, color .5s ease;
   
   &:hover {
     transition: background-color .5s ease, color .5s ease;
-    background:$dark;
-    color:$white;
+    background-color:var(--darkest);
+    color:var(--white);
   }
 
   &:visited{
-    color:$dark;
+    color:var(--darkest);
   }
 
   &:visited:hover {
-    color:$white;
+    color:var(--white);
   }
 
 }
