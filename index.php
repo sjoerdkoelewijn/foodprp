@@ -2,7 +2,7 @@
 
 	<div class="main">
 
-		<div class="recipes tabs">
+		<div class="recipes tabs" data-tab-menu data-tabs-id="Home">
 
 			<button onclick="skddSwitchTab('basic_tab', 'basic_recipes');" id="basic_tab" class="tab_menu active">
 				Basic Recipes
@@ -54,7 +54,7 @@
 
 
 
-			<div id="full_recipes" class="tab_content" style="display:none;">
+			<div id="full_recipes" class="tab_content hidden">
 				
 				<?php
 				
@@ -84,7 +84,7 @@
 
 			</div>
 
-			<div id="liked_recipes" data-shortlist-container data-like-tab-content class="tab_content" style="display:none;"> 			
+			<div id="liked_recipes" data-shortlist-container class="tab_content hidden"> 			
 
 			</div>
 

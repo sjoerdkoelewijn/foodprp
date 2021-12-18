@@ -87,7 +87,7 @@ function cpt_recipes_taxonomy() {
 		'update_item' => __( 'Update Category', 'SKDD' ),
 		'add_new_item' => __( 'Add New Category', 'SKDD' ),
 		'new_item_name' => __( 'New Category Name', 'SKDD' ),
-		'menu_name' => __( 'Categories', 'SKDD' ),
+		'menu_name' => __( 'Recipe Type', 'SKDD' ),
 	  );    
 	  
 	  register_taxonomy('tax_recipes', array('recipes'), array(

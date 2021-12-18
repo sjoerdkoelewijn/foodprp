@@ -175,3 +175,29 @@ function sk_get_custom_taxonomy( $taxonomy_name, $template ) {
 add_action( 'init', function() {
     remove_post_type_support( 'recipes', 'editor');
 }, 99);
+
+
+/*************************** Use first image in gallery as the featured image on post save *********************************/
+
+
+add_filter('acf/save_post', 'gallery_to_thumbnail');
+function gallery_to_thumbnail($post_id) {
+	$gallery = get_field('recipe_images', $post_id, false);
+	if (!empty($gallery)) {
+		$image_id = $gallery[0];
+		set_post_thumbnail($post_id, $image_id);
+	}
+}
+
+/*************************** Add IP whitelist section *********************************/
+
+
+add_filter('admin_init', 'skdd_general_settings_register_fields'); 
+
+function skdd_general_settings_register_fields() { 
+register_setting('general', 'ip_whitelist', 'esc_attr'); 
+add_settings_field('ip_whitelist', '<label for="ip_whitelist">'.__('IP Whitelist' , 'ip_whitelist' ).'</label>' , 'skdd_general_ip_whitelist', 'general'); } 
+
+function skdd_general_ip_whitelist() { 
+$ip_whitelist = get_option( 'ip_whitelist', '' ); 
+echo '<input id="ip_whitelist" style="width: 80%;" type="text" name="ip_whitelist" value="' . $ip_whitelist . '" />'; }

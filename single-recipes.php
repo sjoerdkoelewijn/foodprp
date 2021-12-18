@@ -42,7 +42,7 @@
 
 
 
-		<div class="recipes tabs">
+		<div class="recipes tabs" data-tab-menu data-tabs-id="Recipe<?php the_ID(); ?>">
 
 			<button onclick="skddSwitchTab('ingredients_tab', 'recipe_ingredients');" id="ingredients_tab" class="tab_menu active">
 				Ingredients
@@ -57,21 +57,22 @@
 		<div class="recipes list">
 
 
-
 			<div id="recipe_ingredients" class="tab_content" > 
 
 				
 				<?php
 
 					if( have_rows('ingredients') ): ?>
-						<ul>
+						<ul class="ingredients_list">
 
 							<?php while ( have_rows('ingredients') ) : the_row();?>
 								<li>
-									<?php the_sub_field('amount'); ?>
-									<?php the_sub_field('unit'); ?>
-									<?php 
-									
+									<span class="amount">
+										<?php the_sub_field('amount'); ?>
+										<?php the_sub_field('unit'); ?>
+									</span>	
+
+									<?php 									
 										$ingredient_name = get_sub_field('name'); 
 										echo $ingredient_name->name;
 									?>
@@ -85,12 +86,18 @@
 				<?php
 				$required_recipes = get_field('required_recipes');
 				if( $required_recipes ): ?>
-					<ul>
+					<ul class="ingredients_list">
 					<?php foreach( $required_recipes as $post ): 
 
 						// Setup this post for WP functions (variable must be named $post).
 						setup_postdata($post); ?>
 						<li>
+
+							<span class="amount">
+								<?php the_sub_field('amount'); ?>
+								<?php the_sub_field('unit'); ?>
+							</span>
+
 							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>									
 						</li>
 					<?php endforeach; ?>
@@ -104,10 +111,10 @@
 
 
 
-			<div id="recipe_instructions" class="tab_content" style="display:none;">
+			<div id="recipe_instructions" class="tab_content hidden">
 
 				<?php if( have_rows('instructions') ): ?>
-					<ol>
+					<ol class="instruction_list" >
 
 						<?php while ( have_rows('instructions') ) : the_row();?>
 							<li>

@@ -25,6 +25,10 @@
                 Home
             </a>
 
+            <a title="Add Recipe" class="add_recipe" href="/add-recipe/">
+                Home
+            </a>
+
             <?php // include('parts/main-menu.php'); ?>      
 
         </header>

@@ -13,32 +13,51 @@ html {
     padding:4vw;
 }
 
-.logo {
-    mask:url(../../images/svg/logo.svg);
-    -webkit-mask:url(../../images/svg/logo.svg);
-    background:var(--primary-color);    
-    width:25px;
-    height:25px;
-    display:inline-block;
+.header {
+    display:flex;
+    justify-content: space-between;
+
+    .logo {
+        mask:url(../../images/svg/logo.svg);
+        -webkit-mask:url(../../images/svg/logo.svg);
+        background:var(--primary-color);    
+        width:25px;
+        height:25px;
+        display:inline-block;
+        
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden; 
+    }
     
-    text-indent: 100%;
-    white-space: nowrap;
-    overflow: hidden; 
+    .add_recipe {
+        mask:url(../../images/svg/add-icon.svg);
+        -webkit-mask:url(../../images/svg/add-icon.svg);
+        background:var(--primary-color);    
+        width:25px;
+        height:25px;
+        display:inline-block;
+        
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden; 
+    }
+
 }
-
-
 
 
 /* ------------- Index ------------------------------------------------------------------------------------------------------------- */
 
-.recipes.tabs {
-    display:block;
+.tabs {
+    display:flex;
+    flex-wrap:nowrap;
     margin-top:5vh;
+
     
     .tab_menu {
         border-radius:10px 10px 0 0;
         background:var(--lightest);
-        padding:10px 4.5vw;
+        padding:10px 16px;
         text-decoration: none;
         margin-right:5px;
         font-size:1rem;
@@ -49,6 +68,9 @@ html {
         z-index:5;
         position:relative;
 
+        &:hover {
+            color:var(--darkest);
+        }
     }
 
     .tab_menu.active {
@@ -113,6 +135,7 @@ html {
         .content {
             padding:0 4vw;
             flex-grow: 1.5;
+            width:55vw;
 
             a {
                 text-decoration:none;
@@ -120,8 +143,7 @@ html {
             
             h2 {
                 margin:0;
-                height:30px;
-                width:45vw;
+                width:100%;
                 text-overflow: ellipsis;                
                 white-space: nowrap;
                 overflow:hidden;
@@ -212,8 +234,136 @@ html {
         }
     }
 
+    .ingredients_list {
+        list-style-type:none;
+
+        li {
+            border-bottom:1px solid var(--lighter);
+            line-height:65px;
+
+
+            .amount {
+                width:25%;
+                margin-left:10px;
+                display:inline-block;
+            }
+        
+            &:last-of-type {
+                border:0;
+            }
+        }
+        
+    }
+
+    .instruction_list {
+
+        li {
+            margin-bottom:20px;
+            
+            &::marker {
+                color:var(--medium);
+            }
+        }
+    }
+
 }
 
+/* ------------- Add recipe Page ----------------------------------------------------------------------------------------------------------- */
+
+
+.add_recipe {
+
+    h1 {
+        text-align:center;
+        margin-top:5vh;
+    }
+
+    input, textarea {
+        min-height:50px;
+        border-radius: 5px;
+        border:1px solid var(--lightest);
+        padding:0 10px;
+    }
+
+    .acf-gallery {
+        border-radius: 5px;
+        border:1px solid var(--lightest);
+        padding:0 10px;
+    }
+
+    .acf-table {
+        border-radius: 5px;
+        border:1px solid var(--lightest);
+        
+
+        .acf-field {
+            padding:5px;
+        }
+
+        .acf-fields>.acf-field {
+            border:0;
+        }
+
+        
+    }
+
+    
+
+    .acf-repeater .acf-row-handle.remove {
+        background: var(--white);
+        border-left:0;
+    }
+
+    .acf-gallery-toolbar {
+        border-top:0;
+    }
+
+    label {
+        //color:var(--dark);
+    }
+
+    .acf-input-append {
+        position:absolute;
+        z-index:10;
+        border:0;
+        background:0;
+        right:10px;
+        margin-top:12px;
+        color:var(--medium);
+        font-weight: 800;
+    }
+
+    .acf-button {
+        padding:5px 10px;
+        text-decoration: none;
+        color:var(--white);
+        border-radius:5px;
+        font-size:1rem;
+    }
+
+    .acf-button.button-large {
+        font-size:1.2rem;
+        width:100%;
+    }
+
+    .acf-hl {
+        display:flex;
+        flex-wrap: nowrap;
+    }
+
+    .acf-fr {
+        display:none;
+    }
+
+    .acf-field {
+        padding:20px 0;
+    }
+
+    .acf-repeater .acf-row-handle.order+td {
+        border:0;
+    }
+
+}
 
 
 
