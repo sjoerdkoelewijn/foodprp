@@ -33,9 +33,11 @@ html {
     .menu {
         mask:url(../../images/svg/menu.svg);
         -webkit-mask:url(../../images/svg/menu.svg);
-        background:var(--primary-color);    
-        width:16px;
-        height:16px;
+        background:var(--darkest); 
+        mask-size: 25px 25px;
+        -webkit-mask-size: 25px 25px;   
+        width:25px;
+        height:25px;
         display:inline-block;
         
         text-indent: 100%;
