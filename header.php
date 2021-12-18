@@ -25,7 +25,7 @@
                 Home
             </a>
 
-            <a title="Add Recipe" class="add_recipe" href="/add-recipe/">
+            <a title="Add Recipe" class="menu" href="/add-recipe/">
                 Home
             </a>
 

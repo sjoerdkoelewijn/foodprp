@@ -30,12 +30,12 @@ html {
         overflow: hidden; 
     }
     
-    .add_recipe {
+    .menu {
         mask:url(../../images/svg/menu.svg);
         -webkit-mask:url(../../images/svg/menu.svg);
         background:var(--primary-color);    
-        width:25px;
-        height:25px;
+        width:16px;
+        height:16px;
         display:inline-block;
         
         text-indent: 100%;
