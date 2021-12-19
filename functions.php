@@ -180,11 +180,10 @@ add_action( 'init', function() {
 /*************************** Use first image in gallery as the featured image on post save *********************************/
 
 
-add_filter('acf/save_post', 'gallery_to_thumbnail');
-function gallery_to_thumbnail($post_id) {
-	$gallery = get_field('recipe_images', $post_id, false);
-	if (!empty($gallery)) {
-		$image_id = $gallery[0];
+add_filter('acf/save_post', 'image_to_thumbnail');
+function image_to_thumbnail($post_id) {
+	$image_id = get_field('recipe_image', $post_id, false);
+	if (!empty($image_id)) {
 		set_post_thumbnail($post_id, $image_id);
 	}
 }
