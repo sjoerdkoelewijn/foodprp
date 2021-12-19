@@ -11,7 +11,7 @@
 				<?php the_title(); ?>							
 			</h1>						
 
-			<?php the_excerpt(); ?>
+			<?php the_field('long_description'); ?>
 
 		</div>
 
