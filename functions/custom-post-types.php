@@ -137,3 +137,35 @@ function cpt_ingredients_taxonomy() {
 }
 
 add_action( 'init', 'cpt_ingredients_taxonomy', 0 );
+
+
+function cpt_course_taxonomy() { 
+ 
+	$labels = array(
+	  'name' => _x( 'Courses', 'taxonomy general name', 'SKDD' ),
+	  'singular_name' => _x( 'Course', 'taxonomy singular name', 'SKDD' ),
+	  'search_items' =>  __( 'Search Courses', 'SKDD' ),
+	  'all_items' => __( 'All Courses', 'SKDD' ),
+	  'parent_item' => __( 'Parent Course', 'SKDD' ),
+	  'parent_item_colon' => __( 'Parent Course:', 'SKDD' ),
+	  'edit_item' => __( 'Edit Course', 'SKDD' ), 
+	  'update_item' => __( 'Update Course', 'SKDD' ),
+	  'add_new_item' => __( 'Add New Course', 'SKDD' ),
+	  'new_item_name' => __( 'New Course Name', 'SKDD' ),
+	  'menu_name' => __( 'Courses', 'SKDD' ),
+	);    
+	
+	register_taxonomy('courses', array('recipes'), array(
+	  'hierarchical' 		=> true,
+	  'public'        	=> true,
+	  'labels' 			=> $labels,
+	  'show_ui' 			=> true,
+	  'show_admin_column' => true,
+	  'query_var' 		=> true,
+	  'show_in_rest'      => true,
+	  'rewrite' 			=> array( 'slug' => __( 'course', 'SKDD' ) ),
+	));
+   
+}
+
+add_action( 'init', 'cpt_course_taxonomy', 0 );

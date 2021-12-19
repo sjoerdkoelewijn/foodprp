@@ -356,7 +356,31 @@ html {
         
     }
 
-    
+    .acf-taxonomy-field .categorychecklist-holder {
+        border:0;
+    }
+
+    .select2-selection--multiple, .select2-container.-acf .select2-selection {
+        min-height:50px;
+        border-radius: 5px;
+        border:1px solid var(--lightest);
+        padding:0 10px;
+    }
+
+    .select2-search__field {
+        line-height:50px !important;
+    }
+
+    .select2-container--default .select2-results__option--highlighted[aria-selected] {
+        background-color: var(--primary-color) !important;
+        color: var(--white);
+    }
+
+    .select2-dropdown {
+        background-color: var(--white) !important;
+        border: 1px solid var(--lightest) !important;
+        border-radius: 5px;
+    }
 
     .acf-repeater .acf-row-handle.remove {
         background: var(--white);
